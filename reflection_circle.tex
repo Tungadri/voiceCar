@@ -41,7 +41,7 @@
 \begin{frame}
 \frametitle{Problem Statement }
 Original Question\\
-The equation of the circle which is the mirror image of the circle\\
+Find the equation of the circle which is the mirror image of the circle\\
 \begin{equation}
     \boldsymbol{{x^2}+{y^2}-2x=0}
 \end{equation}
@@ -134,7 +134,7 @@ Then we have
     \frac{\boldsymbol{c+c'}}{2} = \boldsymbol{f}
 \end{equation}
 \begin{equation}
-    \Rightarrow \boldsymbol{c' = 2f + c}
+    \Rightarrow \boldsymbol{c' = 2f - c}
 \end{equation}
 Since the radius remains same after reflection, we have equation of reflected circle as 
 \begin{equation}
@@ -157,12 +157,12 @@ So,the reflected circle is\\
 \textbf{function norm\_vec(AB)}\hfill //returns the normal vector of line AB.\\
 \textbf{function mid\_pt(B,C)}\hfill //calculates the mid point of two given points.\\
 \textbf{function line\_intersect\_normal\_form(N,P)}\hfill //creates a line from normal form.\\
-\textbf{function line\_intersect\_normal\_form(N,P)}\hfill //returns reflection of a point about a line.\\
+\textbf{function reflection\_normal\_form(n1,p1,A)}\hfill //returns reflection of a point about a line.\\
 \end{frame}
 
 \begin{frame}{Walkthrough of the code(Main Section)}
 \textbf{MAIN SECTION}\\
-// centre of the circle \\
+// centre of the circle from A\\
 \textbf{cen=np.matmul(cenM,A.T)} \\
 
 // constant term for the circle \\
