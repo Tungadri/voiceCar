@@ -43,10 +43,13 @@ def reflection_normal_form(n1,p1,A):
 #we have the equation of line as
 #(1 1)x=3
 #this can be written in the form
-#(1 1)(x - C)=0
+#Bx = C
 # where C is a point on the line
-#So, B is the normal of the lnb.ine
+
+#So, B is the normal of the line
 B=np.array([1,1])
+#This is the constant of the line
+C=3
 
 #matrix having the coefficients for the 1-degree terms
 A=(-np.array([2,0]))
@@ -57,14 +60,13 @@ cenM=np.array([[-0.5,0],[0,-0.5]])
 #This is the centre of the circle
 cen=np.matmul(cenM,A.T)
 
-#This is the constant of the line
-C=3
+#This is the constant term for the circle
+D=0
+
 
 #This is the reflected centre
 refCen=reflection_normal_form(B,C,cen)
 
-#This is the constant term for the circle
-D=0
 
 #This is the radius of the circle
 radius=(cen[0]**2+cen[1]**2-D)**0.5
@@ -101,4 +103,6 @@ plt.xlabel('$x$')
 plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid()
+plt.savefig('circles.png')
 plt.show()
+
