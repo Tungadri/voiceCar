@@ -1,2 +1,2 @@
-# voiceCar
-Project for the course AI and ML
+# Matrix Project
+Project for the course EE1390:Introduction to AI and ML
