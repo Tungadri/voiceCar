@@ -1,0 +1,5 @@
+\babel@toc {english}{}
+\beamer@sectionintoc {1}{Problem Statement}{3}{0}{1}
+\beamer@sectionintoc {2}{Desired Answer}{6}{0}{2}
+\beamer@sectionintoc {3}{Solution}{8}{0}{3}
+\beamer@sectionintoc {4}{ Walkthrough of the code }{13}{0}{4}
