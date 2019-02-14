@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 #This program finds the reflection of a circle about a line
 import numpy as np
 #import numpy library as np
@@ -21,7 +22,7 @@ def mid_pt(B,C):
 def line_intersect_normal_form(N,P):
 	return np.matmul(np.linalg.inv(N),P)
 
-#This fucntion finds the reflection of a point about a line from  normal form of the line
+#This function finds the reflection of a point about a line from  normal form of the line
 def reflection_normal_form(n1,p1,A):
 	B=A+(0.1*n1)
 	AB=np.vstack((A,B)).T
@@ -34,35 +35,31 @@ def reflection_normal_form(n1,p1,A):
 	return((2*F)-A)
 
 
-#Now we have to find the reflection of the circle
-#(x^2)+(y^2)-2x=0 about the line
-#x+y=3
+#### About Circle representation ##########
+# {X.T} represents transpose of X .
+# Equation of the circle is of the form  {X.T} * X - 2 * {C.T} * X = r^2 - {C.T} * C 
+# Here C is the center and r is the radius.
+###########################################
+#### About Line representation ############
+# Equation of the line is of the form  B * X = C
+# Here B is the normal and C is a constant
+###########################################
 
-#matrix having the coefficients for the line
-#We need two points to represent the line
-#we have the equation of line as
-#(1 1)x=3
-#this can be written in the form
-#Bx = C
-# where C is a point on the line
-
-#So, B is the normal of the line
-B=np.array([1,1])
-#This is the constant of the line
-C=3
-
-#matrix having the coefficients for the 1-degree terms
+#### Input Section #######
+# Circle Parameters A (:= Coeff. of x and y) & D (:= Constant term in eqn.)
 A=(-np.array([2,0]))
+D=0
+
+# Line Parameters B (:= Normal to the line ) & C (:= Constant term in eqn.)
+B = np.array([1, 1])
+C = 3
+########################
 
 #This matrix when multiplied with the coefficients give the centre of the circle
 cenM=np.array([[-0.5,0],[0,-0.5]])
 
 #This is the centre of the circle
 cen=np.matmul(cenM,A.T)
-
-#This is the constant term for the circle
-D=0
-
 
 #This is the reflected centre
 refCen=reflection_normal_form(B,C,cen)
@@ -103,6 +100,6 @@ plt.xlabel('$x$')
 plt.ylabel('$y$')
 plt.legend(loc='best')
 plt.grid()
-plt.savefig('circles.png')
+plt.savefig('../figs/circles.png')
 plt.show()
 
